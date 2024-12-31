@@ -25,10 +25,15 @@ const Header = () => {
         className="h-screen overflow-hidden hidden md:flex md:flex-col md:justify-between bg-base-100 py-4 md:px-4 fixed top-0 left-auto"
         style={{ width: "240px" }}
       >
-        <div className="flex flex-col">
-          {menuItems ? (
-            <Menu menuItems={menuItems} className="w-full md:w-auto" />
-          ) : null}
+        <div className="flex flex-col gap-2">
+          <div className="p-4 border-b">
+            <p>فیدیپیدس</p>
+          </div>
+          <div className="flex flex-col">
+            {menuItems ? (
+              <Menu menuItems={menuItems} className="w-full md:w-auto" />
+            ) : null}
+          </div>
         </div>
       </div>
     </>

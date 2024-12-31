@@ -9,7 +9,7 @@ const InApp = ({ containerClassName, children }) => {
       <div className="flex justify-between items-start">
         <div
           className={mergeClassNames(
-            "w-full overflow-auto mx-0 mb-0 mt-4 md:m-8 md:mr-60",
+            "w-full overflow-auto mx-0 mb-0 mt-4 md:m-8 md:mr-64 md:pr-4",
             containerClassName
           )}
           style={{ width: "-webkit-fill-available" }}
