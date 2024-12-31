@@ -2,9 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+@font-face {
+  font-family: iransans;
+  src: url(/assets/fonts/IranSans.ttf);
+}
 
 html,
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "iransans", sans-serif;
 }
