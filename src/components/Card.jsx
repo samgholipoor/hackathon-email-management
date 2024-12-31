@@ -1,4 +1,4 @@
-export default function Card({ imageSrc, title, description }) {
+export default function Card({ imageSrc, title }) {
   return (
     <div className="card bg-base-100 shadow-md cursor-pointer">
       <figure className="h-36">

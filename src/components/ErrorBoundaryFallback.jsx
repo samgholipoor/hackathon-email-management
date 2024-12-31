@@ -1,21 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import { useMemo } from "react";
 import Box from "./Box.jsx";
-import ActionButtons, { actionButton } from "./ActionButtons";
-
-interface Props {
-  message?: string;
-  callback: () => void;
-  removeUIFallback: () => void;
-  loading: boolean;
-}
+import ActionButtons, { actionButton } from "./ActionButtons.jsx";
 
 const ErrorBoundaryFallback = ({
   message,
   callback,
   removeUIFallback,
   loading,
-}: Props) => {
+}) => {
   const navigate = useNavigate();
 
   const buttons = useMemo(() => {

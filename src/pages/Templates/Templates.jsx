@@ -1,9 +1,13 @@
 import Box from "@/components/Box";
 import Button from "@/components/Button";
 import Card from "@/components/Card";
+import { Modal } from "@/components/Modal.jsx";
 import InApp from "@/layouts/InApp";
+import { useState } from "react";
+import CreateTemplateModal from "./components/modals/CreateTemplateModal";
 
 const Templates = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const data = [
     {
       title: "سالگرد",
@@ -43,22 +47,36 @@ const Templates = () => {
   ];
 
   return (
-    <InApp>
-      <Box>
-        <div className="flex flex-col gap-8 p-4">
-          <div className="flex justify-end">
-            <Button color="primary" icon="add_black_24dp">
-              قالب جدید
-            </Button>
+    <>
+      <InApp>
+        <Box>
+          <div className="flex flex-col gap-8 p-4">
+            <div className="flex justify-end">
+              <Button
+                color="primary"
+                icon="add_black_24dp"
+                onClick={() => {
+                  setIsOpen(true);
+                }}
+              >
+                قالب جدید
+              </Button>
+            </div>
+            <div className="grid grid-cols-3 gap-4">
+              {data?.map((item) => {
+                return <Card key={item.title} {...item} />;
+              })}
+            </div>
           </div>
-          <div className="grid grid-cols-3 gap-4">
-            {data?.map((item) => {
-              return <Card key={item.titles} {...item} />;
-            })}
-          </div>
-        </div>
-      </Box>
-    </InApp>
+        </Box>
+      </InApp>
+
+      {isOpen ? (
+        <Modal onClose={() => setIsOpen(false)}>
+          <CreateTemplateModal onClose={() => setIsOpen(false)} />
+        </Modal>
+      ) : null}
+    </>
   );
 };
 

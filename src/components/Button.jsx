@@ -1,4 +1,4 @@
-import { ElementType, useMemo } from "react";
+import { useMemo } from "react";
 import { mergeClassNames } from "@/utils/classname";
 import Icon from "@/components/Icon";
 import { Spinner } from "@/components/Spinner";
@@ -7,7 +7,6 @@ export default function Button({
   component = "button",
   icon = "",
   disabled = false,
-  selected = false,
   color = "normal",
   size = "md",
   square = false,
@@ -18,7 +17,7 @@ export default function Button({
   isFullWidth = false,
   ...props
 }) {
-  const Component = component as ElementType;
+  const Component = component;
 
   const colorClass = useMemo(
     () =>
@@ -28,7 +27,7 @@ export default function Button({
         primary: "btn-primary",
         normal: "btn-normal",
       }[color]),
-    [color, selected]
+    [color]
   );
 
   const sizeClass = useMemo(
@@ -52,18 +51,13 @@ export default function Button({
   return (
     <Component
       className={mergeClassNames(
-        "btn inline-flex items-center justify-center gap-2 rounded-md duration-150 whitespace-nowrap font-semibold relative overflow-hidden select-none",
+        "btn inline-flex items-center justify-center gap-2 rounded-md duration-150 whitespace-nowrap font-semibold relative overflow-hidden",
         { "w-full": isFullWidth },
-        transparent ? "bg-opacity-0" : "bg-opacity-10",
         !square && "px-3",
         sizeClass,
         colorClass,
         !disabled &&
-          !selected &&
-          "hover:bg-opacity-20 focus:bg-opacity-25 active:bg-opacity-30 cursor-pointer",
-        !disabled &&
-          selected &&
-          "bg-primary text-primary-content bg-opacity-100 cursor-default",
+          "hover:bg-opacity-95 focus:bg-opacity-90 active:bg-opacity-90 cursor-pointer",
         disabled &&
           "text-base-content text-opacity-40 bg-opacity-0 cursor-not-allowed",
         className

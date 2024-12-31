@@ -3,7 +3,8 @@ import { useMemo } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import routes from "@/router";
 import ErrorLayout from "@/layouts/ErrorLayout";
-import ErrorBoundary from "@/services/errorBoundary";
+import ErrorBoundary from "@/services/errorBoundary.jsx";
+import { OverlaysProvider } from "@/components/Modal.jsx";
 
 const RoutesGenerator = () => {
   const appRoutesList = useMemo(() => {
@@ -31,7 +32,9 @@ function RouterView() {
   return (
     <BrowserRouter>
       <ErrorBoundary>
-        <Routes>{RoutesGenerator()}</Routes>
+        <OverlaysProvider>
+          <Routes>{RoutesGenerator()}</Routes>
+        </OverlaysProvider>
       </ErrorBoundary>
     </BrowserRouter>
   );

@@ -2,7 +2,7 @@ import { useCallback, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import Box from "@/components/Box.jsx";
 import Icon from "@/components/Icon.jsx";
-import ActionButtons, { actionButton } from "@/components/ActionButtons";
+import ActionButtons, { actionButton } from "@/components/ActionButtons.jsx";
 
 export default function ErrorLayout({ code, message }) {
   const navigate = useNavigate();

@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import { mergeClassNames } from "@/utils/classname";
 import { generateUUID } from "@/utils/uuid";
+import Button from "./Button.jsx";
 
 const TYPE_BUTTON_TYPE = {
   primary: "submit",
@@ -37,16 +38,6 @@ export const actionButton = ({
   disabled,
 });
 
-interface ActionButtonsProps {
-  growButtons?: boolean;
-  message?: string;
-  className?: string;
-  buttons: ReturnType<typeof actionButton>[];
-  onClick?: (e: any) => any;
-  size?: "md" | "sm";
-  containerClassName?: string;
-}
-
 export default function ActionButtons({
   growButtons = false,
   message = "",
@@ -56,8 +47,8 @@ export default function ActionButtons({
   size = "md",
   containerClassName,
   ...props
-}: ActionButtonsProps) {
-  const handleClick = (button: any) => {
+}) {
+  const handleClick = (button) => {
     button.onClick();
     onClick?.(button.name);
   };
@@ -81,7 +72,7 @@ export default function ActionButtons({
         )}
       >
         {buttons.map((button) => (
-          <button
+          <Button
             key={button.name}
             onClick={() => handleClick(button)}
             type={button.buttonType}
@@ -89,11 +80,12 @@ export default function ActionButtons({
             iconName={button.iconName}
             inProgress={button.loading}
             outlined={button.outlined}
-            disabled={button.disabled}
-            className={mergeClassNames("btn flex-grow", button.color)}
+            // disabled={button.disabled}
+            color={button.color}
+            // className={mergeClassNames("btn flex-grow", button.color)}
           >
             {button.title}
-          </button>
+          </Button>
         ))}
       </div>
     </div>

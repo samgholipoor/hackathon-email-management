@@ -26,7 +26,13 @@ const Menu = ({ menuItems }) => {
   return (
     <div className="flex flex-col gap-2">
       {filteredMenuItems.map((menuItem) => {
-        return <MenuItem {...menuItem} isActive={menuItem.isOpen} />;
+        return (
+          <MenuItem
+            key={menuItem.title}
+            {...menuItem}
+            isActive={menuItem.isOpen}
+          />
+        );
       })}
     </div>
   );
