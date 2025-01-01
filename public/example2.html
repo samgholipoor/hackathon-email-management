@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <title>Women's Day</title>
+
+    <style>
+      /* Base Styles */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Montserrat", sans-serif;
+        background-color: #e7e7e7;
+        color: #000;
+        line-height: 1.5;
+      }
+
+      h1,
+      h2,
+      p {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Container */
+      .container {
+        position: relative;
+        width: 100%;
+        height: 100vh; /* Full viewport height */
+        background-color: #fff;
+        background-image: url("https://s3.thr1.sotoon.ir/hackethon-email-management-assets/women-background.jpeg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        text-align: center;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Headings */
+      h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 6rem; /* Large heading */
+        color: #924e76;
+      }
+
+      h2 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 3rem; /* Subtitle size */
+        color: #924e76;
+      }
+
+      /* Divider */
+      .divider {
+        width: 80%;
+        margin: 20px auto;
+        border-top: 2px solid #6e4c7b;
+      }
+
+      /* Content */
+      .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap; /* Allow wrapping for smaller screens */
+        gap: 20px;
+      }
+
+      .image {
+        width: 400px;
+        height: 500px;
+        background-image: url("https://s3.thr1.sotoon.ir/hackethon-email-management-assets/women-day.png");
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+      }
+
+      .text {
+        max-width: 500px;
+        font-family: "Cairo", sans-serif;
+        font-size: 3rem;
+        color: #000;
+        text-align: center;
+        padding: 20px;
+        direction: rtl;
+        line-height: 2;
+      }
+
+      .logo {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        width: 60px;
+        height: auto;
+      }
+
+      @media only screen and (max-width: 768px) {
+        h1 {
+          font-size: 4rem;
+        }
+
+        h2 {
+          font-size: 2.5rem;
+        }
+
+        .image {
+          width: 300px;
+          height: 400px;
+        }
+
+        .text {
+          font-size: 1.8rem;
+        }
+      }
+
+      @media only screen and (max-width: 480px) {
+        h1 {
+          font-size: 3rem;
+        }
+
+        h2 {
+          font-size: 2rem;
+        }
+
+        .image {
+          width: 250px;
+          height: 350px;
+        }
+
+        .text {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="scale-wrapper">
+      <div class="container">
+        <h1>MARCH</h1>
+        <h2>WOMEN'S DAY</h2>
+
+        <div class="divider"></div>
+
+        <div class="content">
+          <div class="image"></div>
+          <div class="text">
+            <p>همه چیز با تو شروع می‌شود.</p>
+            <p>روزت مبارک!</p>
+          </div>
+        </div>
+
+        <img
+          src="https://s3.thr1.sotoon.ir/hackethon-email-management-assets/image-1.png"
+          alt="Company Logo"
+          class="logo"
+        />
+      </div>
+    </div>
+  </body>
+</html>

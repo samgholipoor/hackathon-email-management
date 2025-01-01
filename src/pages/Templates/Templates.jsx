@@ -5,8 +5,12 @@ import { Modal } from "@/components/Modal.jsx";
 import InApp from "@/layouts/InApp";
 import { useState } from "react";
 import CreateTemplateCategoryModal from "./components/modals/CreateTemplateCategoryModal";
+import { useLocation } from "react-router-dom";
+import Icon from "@/components/Icon.jsx";
 
 const TemplateCategory = () => {
+  const location = useLocation();
+
   const [isOpen, setIsOpen] = useState(false);
   const data = [
     {
@@ -24,26 +28,6 @@ const TemplateCategory = () => {
       imageSrc:
         "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
     },
-    {
-      title: "خوش آمد",
-      imageSrc:
-        "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
-    },
-    {
-      title: "مناسبت",
-      imageSrc:
-        "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
-    },
-    {
-      title: "اطلاع رسانی",
-      imageSrc:
-        "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
-    },
-    {
-      title: "خداحافظی",
-      imageSrc:
-        "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
-    },
   ];
 
   return (
@@ -51,7 +35,14 @@ const TemplateCategory = () => {
       <InApp>
         <Box>
           <div className="flex flex-col gap-8 p-4">
-            <div className="flex justify-end">
+            <div className="flex justify-between items-center">
+              <div className="flex items-center gap-3 text-lg font-bold text-gray-600">
+                {location.state ? (
+                  <Icon name="category_24dp" className="w-8 text-primary" />
+                ) : null}
+                {location.state ? `دسته ${location.state}` : null}
+              </div>
+
               <Button
                 color="primary"
                 icon="add_black_24dp"
