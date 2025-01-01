@@ -10,16 +10,6 @@ const TemplateCategory = () => {
   const [isOpen, setIsOpen] = useState(false);
   const data = [
     {
-      title: "سالگرد",
-      to: "/templates",
-      imageSrc: [
-        "/assets/images/annivarsary/1.jpg",
-        "/assets/images/annivarsary/2.jpg",
-        "/assets/images/annivarsary/3.png",
-        "/assets/images/annivarsary/4.png",
-      ],
-    },
-    {
       title: "تولد",
       to: "/templates",
       imageSrc: [
@@ -27,6 +17,16 @@ const TemplateCategory = () => {
         "/assets/images/birthday/2.png",
         "/assets/images/birthday/3.png",
         "/assets/images/birthday/4.png",
+      ],
+    },
+    {
+      title: "سالگرد",
+      to: "/templates",
+      imageSrc: [
+        "/assets/images/annivarsary/1.jpg",
+        "/assets/images/annivarsary/2.jpg",
+        "/assets/images/annivarsary/3.png",
+        "/assets/images/annivarsary/4.png",
       ],
     },
     {

@@ -25,7 +25,7 @@ const SendMail = () => {
   const [value, setValue] = useState("");
 
   useEffect(() => {
-    fetch("/example.html")
+    fetch("/example3-sotoon-birthday.html")
       .then((response) => response.text())
       .then(setValue);
   }, []);

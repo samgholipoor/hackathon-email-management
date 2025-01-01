@@ -14,19 +14,24 @@ const TemplateCategory = () => {
   const [isOpen, setIsOpen] = useState(false);
   const data = [
     {
-      title: "سالگرد",
-      imageSrc:
-        "https://www.maildesigner365.com/wp-content/uploads/sites/4/2022/02/company-milestone-designidee.png",
+      title: "تولد ۱",
+      to: "/send-email",
+      src: "/example3-sotoon-birthday.html",
     },
     {
-      title: "تولد",
-      imageSrc:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_oRpPC9EoN65cQ8gfMzKZgBTphgUWCwQPtA&s",
+      title: "تولد ۲",
+      to: "/send-email",
+      src: "/example2.html",
     },
     {
-      title: "ترفیع",
-      imageSrc:
-        "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp",
+      title: "تولد ۳",
+      to: "/send-email",
+      src: "/example5.html",
+    },
+    {
+      title: "تولد ۴",
+      to: "/send-email",
+      src: "/example4.html",
     },
   ];
 

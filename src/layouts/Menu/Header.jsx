@@ -31,7 +31,7 @@ const Header = () => {
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-4 p-4 border-b">
             <div>
-              <img src="/phiedi.png" alt="pheidi" className="w-10 h-10" />
+              <img src="/phiedi.png" alt="pheidi" className="w-12 h-10" />
             </div>
             <div className="font-bold">فیدیپیدس</div>
           </div>
