@@ -30,7 +30,7 @@ const Header = () => {
       >
         <div className="flex flex-col gap-2">
           <div className="p-4 border-b">
-            <p>فیدیپیدس</p>
+            <div>فیدیپیدس</div>
           </div>
           <div className="flex flex-col">
             {menuItems ? (
