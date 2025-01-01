@@ -26,8 +26,6 @@ const CreateTemplateCategory = ({ onSubmit, onClose, onSuccess, loading }) => {
     <Formik
       initialValues={{ title: "", description: "", file: null }}
       onSubmit={(e) => {
-        console.log(e);
-
         return Promise.resolve();
       }}
     >
