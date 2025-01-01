@@ -14,10 +14,6 @@ import { useMutation } from "react-query";
 
 const users = [
   {
-    label: "Sam ",
-    value: "samgholipoor00@gmail.com",
-  },
-  {
     label: "Mohammadhossein Javadi | Javadimohammadhosein@gmail.com",
     value: "Javadimohammadhosein@gmail.com",
   },
@@ -36,6 +32,22 @@ const users = [
   {
     label: "Abol | taheri.abolfazl@gmail.com",
     value: "taheri.abolfazl@gmail.com",
+  },
+  {
+    label: "Sama | samakalantari@gmail.com",
+    value: "samakalantari@gmail.com",
+  },
+  {
+    label: "Ali Amiri | aliamirii.am@gmail.com",
+    value: "aliamiriii.am@gmail.com",
+  },
+  {
+    label: "Ali jhnm | alijhnm.sotoon@gmail.com",
+    value: "alijhnm.sotoon@gmail.com",
+  },
+  {
+    label: "Sam | samgholipoor00@gmail.com",
+    value: "samgholipoor00@gmail.com",
   },
 ];
 
@@ -85,12 +97,14 @@ const SendMail = () => {
         return mutate({
           subject: body?.subject,
           body: body?.body,
+          // content: "<h1> hello </h1>",
           recipients: users.map((user) => user.value),
         });
       case "single":
         return mutate({
           subject: body?.subject,
           body: body?.body,
+          // content: "<h1> hello </h1>",
           recipients: body.reciepients?.map((reciepient) => reciepient.value),
         });
       case "all":
