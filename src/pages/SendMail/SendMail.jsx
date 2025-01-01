@@ -39,7 +39,7 @@ const users = [
   },
   {
     label: "Ali Amiri | aliamirii.am@gmail.com",
-    value: "aliamiriii.am@gmail.com",
+    value: "aliamirii.am@gmail.com",
   },
   {
     label: "Ali jhnm | alijhnm.sotoon@gmail.com",
