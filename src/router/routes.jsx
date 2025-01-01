@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import { useMemo } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import routes from "@/router";
 import ErrorLayout from "@/layouts/ErrorLayout";
 import ErrorBoundary from "@/services/errorBoundary.jsx";
@@ -41,13 +41,13 @@ const RoutesGenerator = () => {
 function RouterView() {
   return (
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
+      <HashRouter>
         <ErrorBoundary>
           <OverlaysProvider>
             <Routes>{RoutesGenerator()}</Routes>
           </OverlaysProvider>
         </ErrorBoundary>
-      </BrowserRouter>
+      </HashRouter>
     </QueryClientProvider>
   );
 }
