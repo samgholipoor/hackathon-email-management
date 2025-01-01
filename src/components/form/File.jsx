@@ -1,8 +1,11 @@
-import { Field } from "formik";
+import { Field, useFormikContext } from "formik";
 import { mergeClassNames } from "@/utils/classname.js";
 import { useState } from "react";
 
 const File = ({ name, label, className, onChange, ...props }) => {
+  const { values } = useFormikContext();
+  console.log(values);
+
   const [selectedFile, setSelectedFile] = useState();
 
   return (

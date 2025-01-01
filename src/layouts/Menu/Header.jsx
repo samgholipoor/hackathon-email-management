@@ -29,8 +29,11 @@ const Header = () => {
         style={{ width: "240px" }}
       >
         <div className="flex flex-col gap-2">
-          <div className="p-4 border-b">
-            <div>فیدیپیدس</div>
+          <div className="flex items-center gap-4 p-4 border-b">
+            <div>
+              <img src="/phiedi.png" alt="pheidi" className="w-10 h-10" />
+            </div>
+            <div className="font-bold">فیدیپیدس</div>
           </div>
           <div className="flex flex-col">
             {menuItems ? (

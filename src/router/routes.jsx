@@ -5,6 +5,16 @@ import routes from "@/router";
 import ErrorLayout from "@/layouts/ErrorLayout";
 import ErrorBoundary from "@/services/errorBoundary.jsx";
 import { OverlaysProvider } from "@/components/Modal.jsx";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnReconnect: false,
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 const RoutesGenerator = () => {
   const appRoutesList = useMemo(() => {
@@ -30,13 +40,15 @@ const RoutesGenerator = () => {
 
 function RouterView() {
   return (
-    <BrowserRouter>
-      <ErrorBoundary>
-        <OverlaysProvider>
-          <Routes>{RoutesGenerator()}</Routes>
-        </OverlaysProvider>
-      </ErrorBoundary>
-    </BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <ErrorBoundary>
+          <OverlaysProvider>
+            <Routes>{RoutesGenerator()}</Routes>
+          </OverlaysProvider>
+        </ErrorBoundary>
+      </BrowserRouter>
+    </QueryClientProvider>
   );
 }
 

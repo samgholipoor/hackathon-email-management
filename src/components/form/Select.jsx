@@ -22,7 +22,7 @@ function Select({
 
   return (
     <div
-      className={mergeClassNames(className, "form-control w-full")}
+      className={mergeClassNames(className, "flex flex-col gap-2 w-full")}
       {...props}
     >
       <Label label={label} />
