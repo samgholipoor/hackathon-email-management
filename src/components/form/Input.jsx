@@ -2,13 +2,7 @@ import { Field } from "formik";
 import { Label } from "@/components/form/Label.jsx";
 import { mergeClassNames } from "@/utils/classname.js";
 
-const Input = ({
-  label,
-  className,
-  isMultiLine = false,
-  onChange,
-  ...props
-}) => {
+const Input = ({ label, className, isMultiLine = false, ...props }) => {
   const tag = isMultiLine ? "textarea" : "input";
 
   return (
@@ -17,7 +11,6 @@ const Input = ({
       <Field
         id={label}
         as={tag}
-        onChange={onChange}
         className={mergeClassNames(
           tag,
           "w-full bg-base-200 active:ring-none transition-all",

@@ -22,7 +22,13 @@ const CreateTemplateCategory = ({ onSubmit, onClose, onSuccess, loading }) => {
   );
 
   return (
-    <Formik>
+    <Formik
+      initialValues={{ title: "", description: "", file: null }}
+      onSubmit={(e) => {
+        console.log(e);
+        return Promise.resolve();
+      }}
+    >
       <Form>
         <div className="flex flex-col gap-4">
           <Input name="title" label="نام" />
