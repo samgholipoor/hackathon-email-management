@@ -11,7 +11,7 @@ const Header = () => {
         icon: "email_black_24dp",
       },
       {
-        title: "قالب‌ها",
+        title: "دسته‌بندی قالب‌ها",
         iconName: "event-note",
         to: "/templates",
         icon: "contract_edit_24dp",

@@ -7,7 +7,7 @@ export default function Button({
   component = "button",
   icon = "",
   disabled = false,
-  color = "normal",
+  color,
   size = "md",
   square = false,
   transparent,
@@ -25,10 +25,13 @@ export default function Button({
         danger: "btn-danger",
         warning: "btn-warning",
         primary: "btn-primary",
+        submit: "btn-primary",
         normal: "btn-normal",
-      }[color]),
-    [color]
+        button: "btn-normal",
+      }[color || props.type]),
+    [color, props.type]
   );
+  console.log(color, props.type);
 
   const sizeClass = useMemo(
     () =>

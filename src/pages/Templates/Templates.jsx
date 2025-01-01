@@ -4,7 +4,7 @@ import Card from "@/components/Card";
 import { Modal } from "@/components/Modal.jsx";
 import InApp from "@/layouts/InApp";
 import { useState } from "react";
-import CreateTemplateModal from "./components/modals/CreateTemplateModal";
+import CreateTemplateCategoryModal from "./components/modals/CreateTemplateCategoryModal";
 
 const Templates = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -59,7 +59,7 @@ const Templates = () => {
                   setIsOpen(true);
                 }}
               >
-                قالب جدید
+                دسته بندی جدید
               </Button>
             </div>
             <div className="grid grid-cols-3 gap-4">
@@ -73,7 +73,7 @@ const Templates = () => {
 
       {isOpen ? (
         <Modal onClose={() => setIsOpen(false)}>
-          <CreateTemplateModal onClose={() => setIsOpen(false)} />
+          <CreateTemplateCategoryModal onClose={() => setIsOpen(false)} />
         </Modal>
       ) : null}
     </>

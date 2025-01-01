@@ -1,7 +1,7 @@
 import { useOverlay } from "@/components/Modal";
-import CreateTemplate from "../CreateTemplate";
+import CreateTemplateCategory from "../CreateTemplateCategory";
 
-const CreateTemplateModal = ({ onClose, onFinish }) => {
+const CreateTemplateCategoryModal = ({ onClose, onFinish }) => {
   const { showToast } = useOverlay();
 
   const handleSubmit = (formData) => {
@@ -14,7 +14,7 @@ const CreateTemplateModal = ({ onClose, onFinish }) => {
   };
 
   return (
-    <CreateTemplate
+    <CreateTemplateCategory
       onSubmit={handleSubmit}
       onClose={onClose}
       onSuccess={handleSuccess}
@@ -23,4 +23,4 @@ const CreateTemplateModal = ({ onClose, onFinish }) => {
   );
 };
 
-export default CreateTemplateModal;
+export default CreateTemplateCategoryModal;

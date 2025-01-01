@@ -9,13 +9,6 @@ const TYPE_BUTTON_TYPE = {
   normal: "button",
 };
 
-const BUTTON_COLOR = {
-  danger: "btn-danger",
-  warning: "btn-warning",
-  primary: "btn-primary",
-  normal: "btn-normal",
-};
-
 export const actionButton = ({
   name = generateUUID(),
   title,
@@ -31,7 +24,6 @@ export const actionButton = ({
   title,
   buttonType: TYPE_BUTTON_TYPE[type],
   iconName,
-  color: BUTTON_COLOR[type],
   onClick,
   loading,
   outlined,
@@ -82,7 +74,6 @@ export default function ActionButtons({
             outlined={button.outlined}
             // disabled={button.disabled}
             color={button.color}
-            // className={mergeClassNames("btn flex-grow", button.color)}
           >
             {button.title}
           </Button>
