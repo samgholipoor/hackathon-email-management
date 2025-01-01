@@ -70,7 +70,7 @@ export default function ActionButtons({
             type={button.buttonType}
             primary={button.type === "primary"}
             iconName={button.iconName}
-            inProgress={button.loading}
+            loading={button.loading}
             outlined={button.outlined}
             // disabled={button.disabled}
             color={button.color}

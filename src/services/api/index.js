@@ -1,6 +1,6 @@
 import axiosInstance from "./service.js";
 
-export const getProducts = async () => {
-  const response = await axiosInstance.get("/products");
+export const sendEmail = async (body) => {
+  const response = await axiosInstance.post("/products", body);
   return response.data;
 };

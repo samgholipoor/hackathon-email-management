@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { mergeClassNames } from "@/utils/classname";
 import Icon from "@/components/Icon";
-import { Spinner } from "@/components/Spinner";
+import { Spinner } from "@/components/Spinner.jsx";
 
 export default function Button({
   component = "button",
@@ -15,6 +15,7 @@ export default function Button({
   children,
   loading = false,
   isFullWidth = false,
+  inProgress,
   ...props
 }) {
   const Component = component;

@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { useQuery } from "react-query";
 import { Formik, Form } from "formik";
 import Box from "@/components/Box";
 import Editor from "@/components/form/Editor/Editor";
@@ -10,7 +9,8 @@ import Radio from "@/components/form/Radio";
 import Select from "@/components/form/Select";
 import ActionButtons, { actionButton } from "@/components/ActionButtons";
 import { useMemo } from "react";
-import { getProducts } from "@/services/api/index";
+import { sendEmail } from "@/services/api/index";
+import { useMutation } from "react-query";
 
 const users = [
   {
@@ -35,10 +35,37 @@ const users = [
   },
 ];
 
-const SendMail = () => {
-  const { data: devices, isLoading } = useQuery("devices", getProducts);
+const groups = [
+  {
+    label: "داوران",
+    value: "1",
+  },
+  {
+    label: "تیم لیدها",
+    value: "2",
+  },
+  {
+    label: "بچه‌های پروداکت",
+    value: "3",
+  },
+  {
+    label: "بچه‌های مالی",
+    value: "4",
+  },
+  {
+    label: "داوران",
+    value: "5",
+  },
+];
 
+const SendMail = () => {
   const [value, setValue] = useState("");
+
+  const { isLoading, mutate } = useMutation(sendEmail, {
+    onSuccess: () => {
+      console.log("s");
+    },
+  });
 
   useEffect(() => {
     fetch("/example3-sotoon-birthday.html")
@@ -46,15 +73,38 @@ const SendMail = () => {
       .then(setValue);
   }, []);
 
+  const handleSubmit = (formData) => {
+    const { email_type, ...body } = formData || {};
+
+    switch (email_type) {
+      case "group":
+        return mutate({
+          subject: body?.subject,
+          body: body?.body,
+          reciepients: users.map((user) => user.value),
+        });
+      case "single":
+        return mutate({
+          subject: body?.subject,
+          body: body?.body,
+          reciepients: body.reciepients?.map((reciepient) => reciepient.value),
+        });
+      case "all":
+        return Promise.resolve();
+      default:
+        return Promise.resolve();
+    }
+  };
+
   const buttons = useMemo(
     () => [
       actionButton({
         title: "ارسال",
         type: "primary",
-        loading: false,
+        loading: isLoading,
       }),
     ],
-    []
+    [isLoading]
   );
 
   return (
@@ -65,8 +115,9 @@ const SendMail = () => {
             initialValues={{
               email_type: "all",
               subject: "",
-              message: "",
+              body: "",
             }}
+            onSubmit={handleSubmit}
           >
             {({ values }) => (
               <Form>
@@ -93,7 +144,7 @@ const SendMail = () => {
                     <Select
                       name="groups"
                       label="گروه‌ها"
-                      options={users}
+                      options={groups}
                       multiple
                     />
                   )}
@@ -106,7 +157,7 @@ const SendMail = () => {
                     />
                   )}
                   <Input name="subject" label="عنوان پیام" />
-                  <Editor value={value} label="متن پیام" />
+                  <Editor name="body" value={value} label="متن پیام" />
                   <Select name="cc" label="CC" options={users} multiple />
                   <Select name="bcc" label="BCC" options={users} />
                 </div>
