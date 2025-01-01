@@ -72,10 +72,6 @@ const groups = [
     label: "بچه‌های مالی",
     value: "4",
   },
-  {
-    label: "داوران",
-    value: "5",
-  },
 ];
 
 const SendMail = () => {
