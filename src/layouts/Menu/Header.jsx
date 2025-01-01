@@ -6,15 +6,18 @@ const Header = () => {
     return [
       {
         title: "ارسال پیام",
-        iconName: "person",
         to: "/send-email",
         icon: "email_black_24dp",
       },
       {
-        title: "دسته‌بندی قالب‌ها",
-        iconName: "event-note",
+        title: "قالب‌ها",
         to: "/templates",
         icon: "contract_edit_24dp",
+      },
+      {
+        title: "دسته‌بندی قالب‌ها",
+        to: "/template-category",
+        icon: "category_24dp",
       },
     ].filter(Boolean);
   }, []);
