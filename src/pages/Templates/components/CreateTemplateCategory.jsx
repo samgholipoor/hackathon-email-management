@@ -25,7 +25,6 @@ const CreateTemplateCategory = ({ onSubmit, onClose, onSuccess, loading }) => {
     <Formik
       initialValues={{ title: "", description: "", file: null }}
       onSubmit={(e) => {
-        console.log(e);
         return Promise.resolve();
       }}
     >
@@ -35,7 +34,7 @@ const CreateTemplateCategory = ({ onSubmit, onClose, onSuccess, loading }) => {
           <Input name="description" label="توضیحات" isMultiLine />
           <File name="file" label="بارگذاری فایل" />
         </div>
-        <ActionButtons className="mt-6" buttons={buttons} growButtons />
+        <ActionButtons className="mt-10" buttons={buttons} growButtons />
       </Form>
     </Formik>
   );

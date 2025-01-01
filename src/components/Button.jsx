@@ -31,7 +31,6 @@ export default function Button({
       }[color || props.type]),
     [color, props.type]
   );
-  console.log(color, props.type);
 
   const sizeClass = useMemo(
     () =>

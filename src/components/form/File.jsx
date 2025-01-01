@@ -28,7 +28,6 @@ const File = ({ name, label, className, onChange, ...props }) => {
             className="file-input file-input-bordered w-full max-w-xs"
             onChange={(event) => {
               const file = event.currentTarget.files[0];
-              console.log(file);
 
               setSelectedFile(file);
               onChange?.(file);
