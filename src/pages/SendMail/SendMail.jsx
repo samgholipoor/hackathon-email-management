@@ -12,7 +12,7 @@ import { useMemo } from "react";
 import { sendEmail } from "@/services/api/index";
 import { useMutation } from "react-query";
 
-const users = [
+const referees = [
   {
     label: "Mohammadhossein Javadi | Javadimohammadhosein@gmail.com",
     value: "Javadimohammadhosein@gmail.com",
@@ -33,6 +33,10 @@ const users = [
     label: "Abol | taheri.abolfazl@gmail.com",
     value: "taheri.abolfazl@gmail.com",
   },
+];
+
+const users = [
+  ...referees,
   {
     label: "Sama | samakalantari@gmail.com",
     value: "samakalantari@gmail.com",
@@ -97,14 +101,12 @@ const SendMail = () => {
         return mutate({
           subject: body?.subject,
           body: body?.body,
-          // content: "<h1> hello </h1>",
-          recipients: users.map((user) => user.value),
+          recipients: referees.map((referee) => referee.value),
         });
       case "single":
         return mutate({
           subject: body?.subject,
           body: body?.body,
-          // content: "<h1> hello </h1>",
           recipients: body.reciepients?.map((reciepient) => reciepient.value),
         });
       case "all":

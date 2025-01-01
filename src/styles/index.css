@@ -15,3 +15,11 @@ body {
 .ck.ck-icon {
   z-index: 0 !important;
 }
+
+.raw-html-embed.ck-widget::before {
+  z-index: -1;
+}
+
+.ck.ck-widget__type-around__button.ck-widget__type-around__button_before {
+  z-index: -1;
+}
