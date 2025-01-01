@@ -59,7 +59,7 @@ const TemplateCategory = () => {
                   setIsOpen(true);
                 }}
               >
-                دسته بندی جدید
+                قالب جدید
               </Button>
             </div>
             <div className="grid grid-cols-3 gap-4">

@@ -32,7 +32,7 @@ const CreateTemplateCategory = ({ onSubmit, onClose, onSuccess, loading }) => {
         <div className="flex flex-col gap-4">
           <Input name="title" label="نام" />
           <Input name="description" label="توضیحات" isMultiLine />
-          <File name="file" label="بارگذاری فایل" />
+          <File name="file" label="بارگذاری تصویر" className="mt-2" />
         </div>
         <ActionButtons className="mt-10" buttons={buttons} growButtons />
       </Form>

@@ -3,6 +3,7 @@ import { Formik, Form, Field } from "formik";
 import ActionButtons, { actionButton } from "@/components/ActionButtons";
 import Input from "@/components/form/Input";
 import File from "@/components/form/File";
+import Select from "@/components/form/Select";
 
 const CreateTemplateCategory = ({ onSubmit, onClose, onSuccess, loading }) => {
   const buttons = useMemo(
@@ -25,6 +26,8 @@ const CreateTemplateCategory = ({ onSubmit, onClose, onSuccess, loading }) => {
     <Formik
       initialValues={{ title: "", description: "", file: null }}
       onSubmit={(e) => {
+        console.log(e);
+
         return Promise.resolve();
       }}
     >
@@ -32,7 +35,16 @@ const CreateTemplateCategory = ({ onSubmit, onClose, onSuccess, loading }) => {
         <div className="flex flex-col gap-4">
           <Input name="title" label="نام" />
           <Input name="description" label="توضیحات" isMultiLine />
-          <File name="file" label="بارگذاری فایل" />
+          <Select
+            name="category"
+            label="دسته‌بندی"
+            options={[
+              { title: "val1", value: 1 },
+              { title: "val2", value: 2 },
+              { title: "val3", value: 3 },
+            ]}
+          />
+          <File name="file" label="بارگذاری فایل" className="mt-2" />
         </div>
         <ActionButtons className="mt-10" buttons={buttons} growButtons />
       </Form>
