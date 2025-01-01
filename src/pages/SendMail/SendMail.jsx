@@ -13,10 +13,26 @@ import { useMemo } from "react";
 import { getProducts } from "@/services/api/index";
 
 const users = [
-  { label: "sama@gmail.com", value: "2" },
-  { label: "ali@gmail.com", value: "3" },
-  { label: "sam@gmail.com", value: "1" },
-  { label: "mohsen@gmail.com", value: "4" },
+  {
+    label: "Mohammadhossein Javadi | Javadimohammadhosein@gmail.com",
+    value: "Javadimohammadhosein@gmail.com",
+  },
+  {
+    label: "Hamidreza Abolhelm | h.abolhelm@gmail.com",
+    value: "h.abolhelm@gmail.com",
+  },
+  {
+    label: "Bahram Ramezani | bahram.ramezani@gmail.com",
+    value: "bahram.ramezani@gmail.com",
+  },
+  {
+    label: "Masoud Montazeri | montazeri.masoud@gmail.com",
+    value: "montazeri.masoud@gmail.com",
+  },
+  {
+    label: "Abol | taheri.abolfazl@gmail.com",
+    value: "taheri.abolfazl@gmail.com",
+  },
 ];
 
 const SendMail = () => {

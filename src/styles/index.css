@@ -11,3 +11,7 @@ html,
 body {
   font-family: "iransans", sans-serif;
 }
+
+.ck.ck-icon {
+  z-index: 0 !important;
+}
