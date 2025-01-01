@@ -1,4 +1,4 @@
-export const API_BASE_URL = "http://86.104.35.248";
+export const API_BASE_URL = "http://86.104.38.198:8086";
 
 export const PLACEHOLDERS = [
   "candidate_name",
