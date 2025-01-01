@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { Formik, Form, Field } from "formik";
 import ActionButtons, { actionButton } from "@/components/ActionButtons";
 import Input from "@/components/form/Input";
+import File from "@/components/form/File";
 
 const CreateTemplateCategory = ({ onSubmit, onClose, onSuccess, loading }) => {
   const buttons = useMemo(
@@ -26,9 +27,9 @@ const CreateTemplateCategory = ({ onSubmit, onClose, onSuccess, loading }) => {
         <div className="flex flex-col gap-4">
           <Input name="title" label="نام" />
           <Input name="description" label="توضیحات" isMultiLine />
-          <Field name="file" />
+          <File name="file" label="بارگذاری فایل" />
         </div>
-        <ActionButtons buttons={buttons} growButtons />
+        <ActionButtons className="mt-6" buttons={buttons} growButtons />
       </Form>
     </Formik>
   );
