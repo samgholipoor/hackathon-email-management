@@ -96,13 +96,13 @@ const SendMail = () => {
       case "group":
         return mutate({
           subject: body?.subject,
-          body: body?.body,
+          content: body?.body,
           recipients: referees.map((referee) => referee.value),
         });
       case "single":
         return mutate({
           subject: body?.subject,
-          body: body?.body,
+          content: body?.body,
           recipients: body.reciepients?.map((reciepient) => reciepient.value),
         });
       case "all":
